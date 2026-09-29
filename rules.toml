@@ -1,0 +1,18 @@
+# Rewrite rules — applied top to bottom to every event.
+#
+# fields      : which event fields to touch — SUMMARY (title), DESCRIPTION, LOCATION
+#               (default: ["SUMMARY"])
+# find        : text to look for
+# replace     : what to put instead ("" deletes it)
+# regex       : true to treat `find` as a regular expression (use \1, \2 for groups)
+# ignore_case : true for case-insensitive matching
+
+# Name shown in calendar apps when subscribing (optional; delete to keep the original)
+# calendar_name = "Stundaskrá"
+
+[[rule]]
+# Remove everything up to and including the first space:
+# "LÖG303G Stjórnsýsluréttur I" -> "Stjórnsýsluréttur I"
+find = '^\S+\s+'
+replace = ""
+regex = true
