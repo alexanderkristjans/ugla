@@ -13,6 +13,6 @@
 [[rule]]
 # Remove everything up to and including the first space:
 # "LÖG303G Stjórnsýsluréttur I" -> "Stjórnsýsluréttur I"
-find = '^\S+\s+'
+find = '^\S*(?<!\d)\d{3}(?!\d)\S*\s+'
 replace = ""
 regex = true
